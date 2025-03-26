@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defesa Civil Nova Iguaçu</title>
+    <link rel="shortcut icon" href="500x500dcn.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <button class="btn btn-primary mb-4" onclick="window.history.back();">Voltar</button>
+    <h1>Últimas Notícias da Defesa Civil</h1>
+    <div id="news-container">Carregando as notícias...</div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // URL do site da Prefeitura de Nova Iguaçu
+        const siteURL = 'https://www.novaiguacu.rj.gov.br/?s=defesa+civil';
+
+        async function fetchNews() {
+            try {
+                // Fetch da página do site
+                const response = await fetch(siteURL);
+                const text = await response.text();
+
+                // Criação de um parser HTML para extrair conteúdo
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+
+                // Encontra os artigos de notícias (ajuste o seletor conforme o conteúdo do site)
+                const newsItems = doc.querySelectorAll('.news-item'); // Ajuste o seletor se necessário
+
+                // Se não encontrar artigos, exibe uma mensagem
+                if (newsItems.length === 0) {
+                    document.getElementById('news-container').innerHTML = 'Nenhuma notícia encontrada.';
+                    return;
+                }
+
+                // Exibe as notícias
+                displayNews(newsItems);
+            } catch (error) {
+                console.error('Erro ao buscar notícias:', error);
+            }
+        }
+
+        function displayNews(newsItems) {
+            const newsContainer = document.getElementById('news-container');
+            newsContainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+            newsItems.forEach(item => {
+                // Cria um elemento HTML para cada notícia
+                const newsElement = document.createElement('div');
+                newsElement.classList.add('news-item');
+                
+                // Extrai título, link e descrição das notícias (ajuste os seletores conforme necessário)
+                const title = item.querySelector('h2 a').textContent;
+                const url = item.querySelector('h2 a').href;
+                const description = item.querySelector('p').textContent;
+
+                newsElement.innerHTML = `
+                    <h2><a href="${url}" target="_blank">${title}</a></h2>
+                    <p>${description}</p>
+                `;
+                newsContainer.appendChild(newsElement);
+            });
+        }
+
+        // Chama a função para buscar as notícias
+        fetchNews();
+    </script>
+</body>
+</html>

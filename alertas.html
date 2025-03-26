@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defesa Civil Nova Iguaçu</title>
+    <link rel="shortcut icon" href="500x500dcn.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <button class="btn btn-primary mb-4" onclick="window.history.back();">Voltar</button>
+    
+    <div class="container mt-4">
+        
+        <div class="row">
+            <!-- Alerta Verde -->
+            <div class="col-md-6 mb-4">
+                <div class="alerta verde">
+                    <h1 class="titulo-alerta">Estado de Vigilância</h1>
+                    <div class="video-alerta">
+                        <video width="280" height="400" controls src="Alerta Verde - Nv1.mp4"></video>
+                    </div>
+                    <p id="verde" class="paragrafo-alerta">Não há previsão de ventos para Nova Iguaçu e Região.</p>
+                </div>
+            </div>
+
+            <!-- Alerta Amarelo -->
+            <div class="col-md-6 mb-4">
+                <div class="alerta amarelo">
+                    <h1 class="titulo-alerta">Estado de Observação</h1>
+                    <div class="video-alerta">
+                        <video width="280" height="400" controls src="Alerta Amarelo - Nv2.mp4"></video>
+                    </div>
+                    <p id="amarelo" class="paragrafo-alerta">Há previsão de pancadas de chuvas pelas próximas horas para Nova Iguaçu e Região.</p>
+                </div>
+            </div>
+
+            <!-- Alerta Amarelo Escuro -->
+            <div class="col-md-6 mb-4">
+                <div class="alerta amarelo-escuro">
+                    <h1 class="titulo-alerta">Estado de Atenção</h1>
+                    <div class="video-alerta">
+                        <video width="280" height="400" controls src="Alerta Amarelo Escuro - Nv3.mp4"></video>
+                    </div>
+                    <p id="amarelo-escuro" class="paragrafo-alerta">Risco Moderado para alagamentos, deslizamentos e inundação para Nova Iguaçu e Região.</p>
+                </div>
+            </div>
+
+            <!-- Alerta Laranja -->
+            <div class="col-md-6 mb-4">
+                <div class="alerta laranja">
+                    <h1 class="titulo-alerta">Estado de Alerta</h1>
+                    <div class="video-alerta">
+                        <video width="280" height="400" controls src="Alerta Laranja - Nv4.mp4"></video>
+                    </div>
+                    <p id="laranja" class="paragrafo-alerta">Risco Alto para alagamentos, deslizamentos e inundação para Nova Iguaçu e Região.</p>
+                </div>
+            </div>
+
+            <!-- Alerta Vermelho -->
+            <div class="col-md-6 mb-4">
+                <div class="alerta vermelho">
+                    <h1 class="titulo-alerta">Estado de Alerta Máximo</h1>
+                    <div class="video-alerta">
+                        <video width="280" height="400" controls src="Alerta Vermelho - Nv5.mp4"></video>
+                    </div>
+                    <p id="vermelho" class="paragrafo-alerta">Risco Muito Alto para alagamentos, deslizamentos e inundação para Nova Iguaçu e Região.</p>
+                </div>
+            </div>
+
+            <!-- Alerta Roxo -->
+            <div class="col-md-6 mb-4">
+                <div class="alerta roxo">
+                    <h1 class="titulo-alerta">Estado de Crise</h1>
+                    <div class="video-alerta">
+                        <video width="280" height="400" controls src="Alerta Roxo - Nv6.mp4"></video>
+                    </div>
+                    <p id="roxo" class="paragrafo-alerta">Não saia de casa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link para o Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
